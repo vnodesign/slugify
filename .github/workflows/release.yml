@@ -25,7 +25,7 @@ jobs:
       - run: pnpm dlx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      
+
       # - run: pnpm install
       # - run: pnpm publish -r --access public
       #   env:

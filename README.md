@@ -33,12 +33,12 @@ Here’s how to use `@vnodesign/slugify` in your project:
 ### Example
 
 ```typescript
-import { slugify } from "@vnodesign/slugify";
+import { slugify } from '@vnodesign/slugify'
 
-const title = "Chào bạn! Đây là bài viết của tôi.";
-const slug = slugify(title);
+const title = 'Chào bạn! Đây là bài viết của tôi.'
+const slug = slugify(title)
 
-console.log(slug); // Output: "chao-ban-day-la-bai-viet-cua-toi"
+console.log(slug) // Output: "chao-ban-day-la-bai-viet-cua-toi"
 ```
 
 ### Input and Output Examples
