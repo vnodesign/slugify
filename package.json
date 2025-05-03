@@ -2,7 +2,7 @@
   "name": "@vnodesign/slugify",
   "type": "module",
   "version": "1.0.5",
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.10.0",
   "description": "A lightweight utility to convert strings into URL-friendly slugs, with support for removing Vietnamese diacritics and handling special characters.",
   "author": "Tuan Duc Tran <tuanductran.dev@gmail.com>",
   "license": "MIT",
