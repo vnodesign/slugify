@@ -1,88 +1,11 @@
 export function slugify(input: string): string {
-  if (typeof input !== 'string' || input.trim() === '')
-    return ''
-
-  const accentMapping = new Map<string, string>([
-    ['á', 'a'],
-    ['à', 'a'],
-    ['ă', 'a'],
-    ['ắ', 'a'],
-    ['ằ', 'a'],
-    ['ẵ', 'a'],
-    ['ẳ', 'a'],
-    ['â', 'a'],
-    ['ấ', 'a'],
-    ['ầ', 'a'],
-    ['ẫ', 'a'],
-    ['ẩ', 'a'],
-    ['ã', 'a'],
-    ['ả', 'a'],
-    ['ạ', 'a'],
-    ['ặ', 'a'],
-    ['ậ', 'a'],
-    ['đ', 'd'],
-    ['é', 'e'],
-    ['è', 'e'],
-    ['ê', 'e'],
-    ['ế', 'e'],
-    ['ề', 'e'],
-    ['ễ', 'e'],
-    ['ể', 'e'],
-    ['ẽ', 'e'],
-    ['ẻ', 'e'],
-    ['ẹ', 'e'],
-    ['ệ', 'e'],
-    ['í', 'i'],
-    ['ì', 'i'],
-    ['ĩ', 'i'],
-    ['ỉ', 'i'],
-    ['ị', 'i'],
-    ['ó', 'o'],
-    ['ò', 'o'],
-    ['ô', 'o'],
-    ['ố', 'o'],
-    ['ồ', 'o'],
-    ['ỗ', 'o'],
-    ['ổ', 'o'],
-    ['õ', 'o'],
-    ['ỏ', 'o'],
-    ['ơ', 'o'],
-    ['ớ', 'o'],
-    ['ờ', 'o'],
-    ['ỡ', 'o'],
-    ['ở', 'o'],
-    ['ợ', 'o'],
-    ['ọ', 'o'],
-    ['ộ', 'o'],
-    ['ú', 'u'],
-    ['ù', 'u'],
-    ['ũ', 'u'],
-    ['ủ', 'u'],
-    ['ư', 'u'],
-    ['ứ', 'u'],
-    ['ừ', 'u'],
-    ['ữ', 'u'],
-    ['ử', 'u'],
-    ['ự', 'u'],
-    ['ụ', 'u'],
-    ['ý', 'y'],
-    ['ỳ', 'y'],
-    ['ỹ', 'y'],
-    ['ỷ', 'y'],
-    ['ỵ', 'y'],
-  ])
-
-  let slug = input.toLowerCase()
-
-  slug = slug
-    .split('')
-    .map(char => accentMapping.get(char) || char)
-    .join('')
-
-  slug = slug
-    .replace(/[^0-9a-z]+/g, '-')
-    .replace(/-+/g, '-')
+  if (!input || typeof input !== 'string') return ''
+  return input
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-
-  return slug
+    .replace(/-+/g, '-')
 }
