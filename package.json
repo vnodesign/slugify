@@ -56,7 +56,7 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
+    "@antfu/eslint-config": "^5.2.1",
     "bumpp": "^10.1.0",
     "eslint": "^9.25.1",
     "esno": "^4.8.0",
